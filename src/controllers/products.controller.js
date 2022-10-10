@@ -8,6 +8,7 @@ import { updateProdService } from "../services/patchProd.service";
 export const postProductController = async (req, res) => {
   try {
     const product = req.body;
+
     const createProduct = await createProductService(product);
     return res.status(201).json({
       message: "Product Created!",
@@ -33,10 +34,11 @@ export const getProductsController = async (req, res) => {
 
 export const getProdCatByIdController = async (req, res) => {
   try {
-    const id = req.params;
-    console.log(id);
+    const id = req.params.category_id;
+
     const prdFound = await getPrdgCatByIdService(id);
-    return res.json(prdFound);
+
+    return res.status(200).json(prdFound);
   } catch (error) {
     return res.status(400).json({
       message: error.message,

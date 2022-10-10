@@ -14,7 +14,7 @@ productsRoutes.get("", getProductsController);
 
 productsRoutes.get("/:id", getprdByIdController);
 
-productsRoutes.get("/category/:categoy_id", getProdCatByIdController);
+productsRoutes.get("/category/:category_id", getProdCatByIdController);
 
 productsRoutes.post("", postProductController);
 
